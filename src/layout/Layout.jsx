@@ -1,5 +1,5 @@
 
-import Navbar from "../components/Header/Navbar";
+import Navbar from "../components/Header/Header";
 
 
 
@@ -7,7 +7,7 @@ const Layout = ({children}) => {
   return (
     <>
     <div className="relative ">
-      <header className="w-full bg-white mx-8 pt-16 2xl:mt-4">
+      <header className="w-full ">
         <Navbar />
       </header>
       <div className='mt-4'>
