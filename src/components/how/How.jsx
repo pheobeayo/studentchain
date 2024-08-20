@@ -7,9 +7,7 @@ const How = () => {
             <div className="bg-white lg:w-[90%] md:w-[90%] w-[100%] mx-auto ">
                 <div className="container mx-auto px-8 sm:px-[80px] py-[100px]">
                     <h1 className="text-[#331000] lg:text-[32px] md:text-[32px] text-[24px] font-[700] lg:w-[70%] md:w-[70%] w-[100%] my-12 font-titiliumweb text-center lg:text-left md:text-left">
-                        How to Navigate
-                        <br />
-                        Welcome to StudentChain
+                       Welcome to StudentChain
                         <br />
                         How to Navigate StudentChain
                     </h1>
