@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
+import Footer from "../footer/Footer";
 
 // import useGetProposalById from "../../hooks/useGetProposalById";
 import { Link, useParams } from "react-router-dom";

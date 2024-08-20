@@ -28,7 +28,7 @@ const AllRoutes = () => {
 );
 const CreateCommunity = lazy(()=> import("../pages/create-community/CreateCommunity"))
 
-const  Community = lazy(()=> import("../pages/community/Community"))
+
 
 
   return (
@@ -51,7 +51,7 @@ const  Community = lazy(()=> import("../pages/community/Community"))
                 element={<StudentProjectDetails />}
               />
               <Route path='/create-community' element={<CreateCommunity/>}/>
-              <Route path='/community' element= {<Community/>}/>
+             
             </Routes>
           </Layout>
         </BrowserRouter>

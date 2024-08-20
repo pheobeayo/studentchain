@@ -8,8 +8,8 @@ const Hero = () => {
   const isReg = useIsStudent();
 
   return (
-    <div className="w-100 md:w-[100%]">
-      <div className="flex flex-col items-center gap-4">
+    <div className=" bg-[#331000]/5 relative py-6">
+      <div className="flex flex-col items-center gap-4 lg:w-[70%] md:w-[70%] w-[100%] mx-auto text-center my-12 px-4 lg:px-0 md:px-0">
         <img src={stud} alt="stud" className="w-1/4 mt-10 flex items-center" />
         <h1 className="text-[40px] md:text-[40px] font-serif font-extrabold capitalize text-center  text-[#091913]">
           Fueling Education's Next Frontier
@@ -39,12 +39,12 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-
-      <div className="grid grid-cols-2 gap-0 md:flex md:flex-row">
-        <div className="mt-44 mx-32">
+      <div className="lg:w-[500px] lg:h-[500px] md:w-[500px] md:h-[500px] w-[250px] h-[250px] bg-[#015C28]/20 blur-[80px] absolute top-0 left-0 rounded-full"></div>
+      <div className="flex flex-col lg:flex-row md:flex-row justify-between lg:w-[90%] md:w-[90%] w-[100%] mx-auto mb-10">
+        <div className="flex justify-end items-center lg:w-[45%] md:w-[45%] w-[100%]">
           <img src={heroimage2} alt="heroimage1" />
         </div>
-        <div className="mt-20">
+        <div className="flex justify-start items-center lg:w-[52%] md:w-[52%] w-[100%] ">
           <img src={heroimage1} alt="heroimage2" />
         </div>
       </div>
