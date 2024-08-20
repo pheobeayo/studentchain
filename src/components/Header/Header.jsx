@@ -10,7 +10,7 @@ const Header = () => {
     <header className="py-8 bg-[#331000]/5 bg-gradient fixed top-0 right-0 left-0 z-40 p-4 border-y">
       <div className="w-[90%] mx-auto lg:flex md:flex justify-between hidden ">
         <img src={logo} alt="" className="w-[235px] h-[43px]" />
-        <nav>
+        <nav className="pt-2">
           <NavLink
             to="/"
             className="text-[#331000]/90 font-serif hover:text-[#331000] hover:font-[700] mr-10 text-[18px]"
