@@ -62,31 +62,31 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/fund-modal/:id"
-            className="text-[#331000]/90 hover:text-[#331000] hover:font-[700] mr-10 text-[18px]"
+            className="text-[#331000]/90 hover:text-[#331000] hover:font-[700] mb-6 text-[18px]"
           >
             Fund
           </NavLink>
           <NavLink
             to="/create-proposal"
-            className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] mr-10 text-[18px]"
+            className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] mb-6 text-[18px]"
           >
             Submit Proposal
           </NavLink>
           <NavLink
             to="/fund-modal/:id"
-            className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] mr-10 text-[18px]"
+            className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] mb-6 text-[18px]"
           >
             Check Proposal
           </NavLink>
           <NavLink
             to="/about-us"
-            className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] mr-10 text-[18px]"
+            className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] mb-6 text-[18px]"
           >
             About us
           </NavLink>
           <NavLink
             to="/create-community"
-            className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] mr-10 text-[18px]"
+            className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] text-[18px]"
           >
             Create Community
           </NavLink>
