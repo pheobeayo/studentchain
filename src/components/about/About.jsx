@@ -3,7 +3,7 @@ import aboutimage from "../../assets/aboutimage.svg";
 const About = () => {
   return (
     <div className="bg-white">
-      <h2 className="text-[#331000] lg:text-[36px] md:text-[36px] text-[26px] font-[700] my-8 text-center mb-12">
+      <h2 className="text-[#331000] lg:text-[36px] md:text-[36px] text-[26px] font-[700] my-8 text-center mt-20">
         About Us
       </h2>
       <div>
@@ -43,11 +43,11 @@ const About = () => {
               generations to come
             </li>
           </ul>
-          <div className="lg:w-[45%] md:w-[45%] w-[100%]">
+          <div className="lg:w-[45%] md:w-[45%] w-[100%] ">
             <img
               src={aboutimage}
               alt=""
-              className="w-[100%]"
+              className="w-[100%] h-[90%]"
             />
           </div>
         </div>

@@ -2,13 +2,15 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import PageLoader from "../components/Loader/PageLoader";
-import Layout from "../layout/Layout";
+
+
 
 const AllRoutes = () => {
   const Home = lazy(() => import("../pages/home/Home"));
   const CreateProposal = lazy(() =>
     import("../pages/create-proposal/CreateProposal")
   );
+  const HomeLayout = lazy (() => import("../layout/HomeLayout"));
   const SubmitProposal = lazy(() =>
     import("../pages/create-proposal/SubmitProposal")
   );
@@ -26,7 +28,10 @@ const AllRoutes = () => {
   const Proposals = lazy(() =>
   import("../components/proposal/Proposal")
 );
-const CreateCommunity = lazy(()=> import("../pages/create-community/CreateCommunity"))
+const CreateCommunity = lazy(()=> import("../pages/create-community/CreateCommunity"));
+
+const CommunityLayout = lazy(()=> import("../layout/CommunityLayout"));
+const Dashboard = lazy(()=> import("../pages/dashboard/Dashboard"));
 
 
 
@@ -36,9 +41,10 @@ const CreateCommunity = lazy(()=> import("../pages/create-community/CreateCommun
       <Toaster />
       <Suspense fallback={<PageLoader />}>
         <BrowserRouter>
-          <Layout>
+          
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<HomeLayout />} >
+              <Route index element={<Home />} />
               <Route path="/create-proposal" element={<CreateProposal />} />
               <Route path="/submit-proposal" element={<SubmitProposal />} />
               <Route path="/login" element={<Login />} />
@@ -51,9 +57,14 @@ const CreateCommunity = lazy(()=> import("../pages/create-community/CreateCommun
                 element={<StudentProjectDetails />}
               />
               <Route path='/create-community' element={<CreateCommunity/>}/>
+              </Route>
+              <Route path="/dashboard" element={<CommunityLayout />} >
+              <Route index element ={<Dashboard/>}/>
+              </Route>
+
              
             </Routes>
-          </Layout>
+          
         </BrowserRouter>
       </Suspense>
     </div>
