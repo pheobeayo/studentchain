@@ -16,14 +16,12 @@ const useFund = () => {
     return useCallback(async (proposalId, amounts) => {
         const readWriteProvider = getProvider(walletProvider);
         const signer = await readWriteProvider.getSigner();
-        const amount = ethers.parseEther(amounts)
-        console.log(amount);
-
+        console.log(proposalId);
         const contract = getStudentChainContract(signer);
 
         try {
             const transaction = await contract.donate(proposalId, {
-                value: amount
+                value: amounts
             });
             console.log("transaction: ", transaction);
             const receipt = await transaction.wait();

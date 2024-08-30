@@ -20,13 +20,13 @@ const Header = () => {
             Home
           </NavLink>
           <NavLink
-            to="/fund-modal/:id"
+            to="/fund-modal/0"
             className="text-[#331000]/90 font-serif hover:text-[#331000] hover:font-[700] mr-10 text-[18px]"
           >
             Fund
           </NavLink>
           <NavLink
-            to="/create-proposal"
+            to={isReg ? "/login" : "/create-proposal"}
             className="text-[#331000]/90 font-serif hover:text-[#331000] hover:font-[700] mr-10 text-[18px]"
           >
             Submit Proposal
@@ -43,12 +43,12 @@ const Header = () => {
           >
             About us
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/create-community"
             className="text-[#331000]/90 font-serif  hover:text-[#331000] hover:font-[700] text-[18px]"
           >
             Create Community
-          </NavLink>
+          </NavLink> */}
         </nav>
         <w3m-button />
       </div>
@@ -63,7 +63,7 @@ const Header = () => {
             Home
           </NavLink>
           <NavLink
-            to="/fund-modal/:id"
+            to="/fund-modal/0"
             className="text-[#331000]/90 hover:text-[#331000] hover:font-[700] mb-6 text-[18px]"
           >
             Fund
@@ -72,7 +72,7 @@ const Header = () => {
             to={isReg ? "/login" : "/create-proposal"}
             className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] mb-6 text-[18px]"
           >
-            Submit Proposalssss
+            Submit Proposal
           </NavLink>
           <NavLink
             to="/fund-modal/:id"
@@ -86,12 +86,12 @@ const Header = () => {
           >
             About us
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/create-community"
             className="text-[#331000]/90  hover:text-[#331000] hover:font-[700] text-[18px]"
           >
             Create Community
-          </NavLink>
+          </NavLink> */}
           <div className="mt-6">
             <w3m-button />
           </div>

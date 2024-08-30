@@ -1,15 +1,18 @@
 import { useState } from "react";
 import useFund from "../../hooks/useFund";
 import { useParams } from "react-router-dom";
+import { ethers } from "ethers";
 
 const FundingSuccessPage = () => {
   const { id } = useParams();
-  const [amount, setAmount] = useState(null)
+  const [amount, setAmount] = useState("0")
   const fund = useFund()
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fund(amount, id)
+    await fund(id, amount)
 
   }
   return (
@@ -29,8 +32,8 @@ const FundingSuccessPage = () => {
                     className="bg-white border-[#331000] border-2 rounded w-full py-2 px-3 text-[#331000] leading-tight focus:outline-none focus:shadow-outline"
                   >
                     <option selected>Funding currency</option>
-                    <option value="US">USDT</option>
-                    <option value="E">E NARIA</option>
+                    <option value="US">Ether</option>
+                    <option value="E">USDT -coming soon</option>
 
                   </select>
                 </span>
@@ -38,14 +41,14 @@ const FundingSuccessPage = () => {
               <div className="mb-2">
                 <label
                   className="block text-[#331000] text-base font-bold mb-2"
-                  
+
                 >
                   Price
                 </label>
                 <input
                   className="bg-white border-[#FF5100] border-2 rounded w-full py-2 px-3 text-[#331000] leading-tight focus:outline-none focus:shadow-outline"
                   id="amount"
-                  value={amount}
+                  value={amount.toString()}
                   onChange={(e) => setAmount(e.target.value)}
                   type="amount"
                   placeholder="Enter the amount you want Donate"

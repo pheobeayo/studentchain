@@ -36,7 +36,7 @@ const StudentProjectDetails = () => {
             </div>
             <div className="mx-6 md:w-1/3">
               <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                <img src={`https://green-rational-prawn-874.mypinata.cloud/ipfs/${proposalData[7]}`} alt="urgent" className="w-full h-auto mb-2" />
+                <img src={`https://green-rational-prawn-874.mypinata.cloud/ipfs/${proposalData[6]}`} alt="urgent" className="w-full h-auto mb-2" />
                 <h3 className="font-bold text-[#091913] text-sm mx-4">
                   {proposalData[3]}
                 </h3>
