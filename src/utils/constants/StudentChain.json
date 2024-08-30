@@ -1,12 +1,6 @@
 [
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "nativeToken",
-				"type": "address"
-			}
-		],
+		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
@@ -40,11 +34,6 @@
 			}
 		],
 		"name": "OwnableUnauthorizedAccount",
-		"type": "error"
-	},
-	{
-		"inputs": [],
-		"name": "ReentrancyGuardReentrantCall",
 		"type": "error"
 	},
 	{
@@ -115,7 +104,7 @@
 			},
 			{
 				"indexed": true,
-				"internalType": "enum StudentChain.ProposalStatus",
+				"internalType": "enum FundStudent.ProposalStatus",
 				"name": "status",
 				"type": "uint8"
 			}
@@ -159,7 +148,7 @@
 			},
 			{
 				"indexed": true,
-				"internalType": "enum StudentChain.ProposalStatus",
+				"internalType": "enum FundStudent.ProposalStatus",
 				"name": "status",
 				"type": "uint8"
 			}
@@ -197,7 +186,7 @@
 			},
 			{
 				"indexed": true,
-				"internalType": "enum StudentChain.ProposalStatus",
+				"internalType": "enum FundStudent.ProposalStatus",
 				"name": "status",
 				"type": "uint8"
 			}
@@ -238,6 +227,10 @@
 		"type": "event"
 	},
 	{
+		"stateMutability": "payable",
+		"type": "fallback"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -248,70 +241,6 @@
 		"name": "approveProposal",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "approvedProposals",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "proposalId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "student",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "title",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "referral",
-				"type": "string"
-			},
-			{
-				"internalType": "enum StudentChain.ProposalStatus",
-				"name": "status",
-				"type": "uint8"
-			},
-			{
-				"internalType": "string",
-				"name": "imageIPFSHashTranscript",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			},
-			{
-				"internalType": "bool",
-				"name": "disbursed",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -333,29 +262,27 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"inputs": [],
+		"name": "checkContractBal",
+		"outputs": [
 			{
-				"internalType": "string",
-				"name": "_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "location",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "imageHash",
-				"type": "string"
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
-		"name": "createCommunity",
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_proposalId",
+				"type": "uint256"
+			}
+		],
+		"name": "closeProposal",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -389,36 +316,12 @@
 			}
 		],
 		"name": "createProposal",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_proposalId",
-				"type": "uint256"
-			}
-		],
-		"name": "disburseFund",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			},
 			{
 				"internalType": "uint256",
 				"name": "_proposalId",
@@ -427,12 +330,18 @@
 		],
 		"name": "donate",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "getApprovedProposals",
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_proposalId",
+				"type": "uint256"
+			}
+		],
+		"name": "getProposal",
 		"outputs": [
 			{
 				"components": [
@@ -462,9 +371,14 @@
 						"type": "string"
 					},
 					{
-						"internalType": "enum StudentChain.ProposalStatus",
+						"internalType": "enum FundStudent.ProposalStatus",
 						"name": "status",
 						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "imageIPFSHash",
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -478,6 +392,11 @@
 					},
 					{
 						"internalType": "bool",
+						"name": "isRegistered",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
 						"name": "approved",
 						"type": "bool"
 					},
@@ -487,7 +406,101 @@
 						"type": "bool"
 					}
 				],
-				"internalType": "struct StudentChain.Proposal[]",
+				"internalType": "struct FundStudent.Proposal",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_proposalId",
+				"type": "uint256"
+			}
+		],
+		"name": "getProposalStatus",
+		"outputs": [
+			{
+				"internalType": "enum FundStudent.ProposalStatus",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getProposals",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "student",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "referral",
+						"type": "string"
+					},
+					{
+						"internalType": "enum FundStudent.ProposalStatus",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "imageIPFSHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "imageIPFSHashTranscript",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRegistered",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "disbursed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct FundStudent.Proposal[]",
 				"name": "",
 				"type": "tuple[]"
 			}
@@ -497,64 +510,12 @@
 	},
 	{
 		"inputs": [],
-		"name": "getPendingProposals",
+		"name": "getProposalsCount",
 		"outputs": [
 			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "proposalId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "student",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "description",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "title",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "referral",
-						"type": "string"
-					},
-					{
-						"internalType": "enum StudentChain.ProposalStatus",
-						"name": "status",
-						"type": "uint8"
-					},
-					{
-						"internalType": "string",
-						"name": "imageIPFSHashTranscript",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "approved",
-						"type": "bool"
-					},
-					{
-						"internalType": "bool",
-						"name": "disbursed",
-						"type": "bool"
-					}
-				],
-				"internalType": "struct StudentChain.Proposal[]",
+				"internalType": "uint256",
 				"name": "",
-				"type": "tuple[]"
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -615,70 +576,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "pendingProposals",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "proposalId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "student",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "title",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "referral",
-				"type": "string"
-			},
-			{
-				"internalType": "enum StudentChain.ProposalStatus",
-				"name": "status",
-				"type": "uint8"
-			},
-			{
-				"internalType": "string",
-				"name": "imageIPFSHashTranscript",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			},
-			{
-				"internalType": "bool",
-				"name": "disbursed",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
@@ -712,9 +609,14 @@
 				"type": "string"
 			},
 			{
-				"internalType": "enum StudentChain.ProposalStatus",
+				"internalType": "enum FundStudent.ProposalStatus",
 				"name": "status",
 				"type": "uint8"
+			},
+			{
+				"internalType": "string",
+				"name": "imageIPFSHash",
+				"type": "string"
 			},
 			{
 				"internalType": "string",
@@ -725,6 +627,11 @@
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isRegistered",
+				"type": "bool"
 			},
 			{
 				"internalType": "bool",
@@ -754,13 +661,74 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "proposalDeadline",
-		"outputs": [
+		"inputs": [
 			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"name": "proposals",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "proposalId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "student",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "title",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "referral",
+				"type": "string"
+			},
+			{
+				"internalType": "enum FundStudent.ProposalStatus",
+				"name": "status",
+				"type": "uint8"
+			},
+			{
+				"internalType": "string",
+				"name": "imageIPFSHash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "imageIPFSHashTranscript",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "isRegistered",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "disbursed",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -780,35 +748,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "registeredStudents",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "student",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "imageIPFSHash",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "disbursedBalance",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "renounceOwnership",
 		"outputs": [],
@@ -819,7 +758,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_student",
+				"name": "_studentId",
 				"type": "address"
 			}
 		],
@@ -893,6 +832,19 @@
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "_studentAddress",
+				"type": "address"
+			}
+		],
+		"name": "toggleRevokedStatus",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "newOwner",
 				"type": "address"
 			}
@@ -910,14 +862,8 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_proposalDeadline",
-				"type": "uint256"
-			}
-		],
-		"name": "updateProposalDeadline",
+		"inputs": [],
+		"name": "withdrawEther",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -926,11 +872,16 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_amount",
+				"name": "_proposalId",
 				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "student",
+				"type": "address"
 			}
 		],
-		"name": "withdraw",
+		"name": "withdrawFund",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

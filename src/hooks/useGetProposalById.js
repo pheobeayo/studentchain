@@ -15,7 +15,7 @@ const useGetProposalById = () => {
         const contract = getStudentChainContract(readOnlyProvider);
 
         contract
-            .getPendingProposals()
+            .getProposal()
             .then((res) => {
                 console.log(res);
                 setReg({

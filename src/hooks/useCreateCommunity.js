@@ -17,7 +17,7 @@ const useCreateCommunity = () => {
         const contract = getStudentChainContract(signer);
 
         try {
-            const transaction = await contract.createCommunity(title, description, location, imageIPFSHash);
+            const transaction = await contract.createProposal(title, description, location, imageIPFSHash);
             console.log("transaction: ", transaction);
             const receipt = await transaction.wait();
 

@@ -12,6 +12,7 @@ const Proposal = () => {
   };
   const navigate = useNavigate();
 
+  console.log(proposal);
 
   const handleClick = (id) => {
     navigate(`/fund/${id}`);

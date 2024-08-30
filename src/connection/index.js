@@ -1,13 +1,13 @@
 import { createWeb3Modal, defaultConfig } from "@web3modal/ethers/react";
 
 
-export const SUPPORTED_CHAIN = 4202;
+export const SUPPORTED_CHAIN = 656476;
 
-const lisk = {
+const eduChain = {
     chainId: SUPPORTED_CHAIN,
-    name: "Lisk Sepolia Testnet",
-    currency: "ETH",
-    explorerUrl: "https://sepolia-blockscout.lisk.com/",
+    name: "Open Campus Codex",
+    currency: "EDU",
+    explorerUrl: "http://opencampus-codex.blockscout.com/",
     rpcUrl: process.env.REACT_APP_RPC_URL,
 };
 
@@ -21,7 +21,7 @@ const metadata = {
 export const configureWeb3Modal = () =>
     createWeb3Modal({
         ethersConfig: defaultConfig({ metadata }),
-        chains: [lisk],
+        chains: [eduChain],
         projectId: process.env.REACT_APP_PROJECTID,
         enableAnalytics: false, // Optional - defaults to your Cloud configuration
         themeVariables: {
