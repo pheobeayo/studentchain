@@ -20,7 +20,7 @@ const Proposal = () => {
 
   return (
     <div className="bg-white">
-      <div className="container mx-auto px-8 sm:px-[80px] py-[100px]">
+      {/* <div className="container mx-auto px-8 sm:px-[80px] py-[100px]">
         <h2 className="text-[#331000] text-3xl font-bold leading-10">
           Proposals available to be funded
         </h2>
@@ -73,7 +73,7 @@ const Proposal = () => {
             <h3>Could not get proposals!!</h3>
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
