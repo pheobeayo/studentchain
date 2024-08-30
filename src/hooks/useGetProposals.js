@@ -17,13 +17,13 @@ const useGetProposals = () => {
         contract
             .getProposals()
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 setReg({
                     loading: false,
                     data: res
                 })
 
-                console.log("RESP", res);
+                // console.log("RESP", res);
 
             })
             .catch((err) => {
