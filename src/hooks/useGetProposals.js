@@ -15,13 +15,16 @@ const useGetProposals = () => {
         const contract = getStudentChainContract(readOnlyProvider);
 
         contract
-            .getPendingProposals()
+            .getProposals()
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 setReg({
                     loading: false,
                     data: res
                 })
+
+                // console.log("RESP", res);
+
             })
             .catch((err) => {
                 console.error("error fetching registration status: ", err);

@@ -6,13 +6,12 @@ import { getStudentChainContract } from "../utils/constants/contracts";
 const useIsStudent = () => {
 
     const [reg, setReg] = useState(false);
-    const { address } = useWeb3ModalAccount()
+    const { address, isConnected, chainId } = useWeb3ModalAccount()
 
 
 
     useEffect(() => {
         const contract = getStudentChainContract(readOnlyProvider);
-
         contract
             .isStudent(address)
             .then((res) => {
@@ -25,7 +24,7 @@ const useIsStudent = () => {
                 console.error("error fetching registration status: ", err);
                 setReg(false);
             });
-    }, [address]);
+    }, [address, chainId, isConnected]);
 
     return reg;
 }
