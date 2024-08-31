@@ -1,5 +1,3 @@
-
-
 ### Project Name: Studentchain
 
 
@@ -44,5 +42,5 @@ https://www.canva.com/design/DAGEnxLo7Qc/PKoHoxS-S2k5jkzjubVOLQ/view?utm_content
 ### Prototype
 https://www.figma.com/file/PUblN4MOdsqA4I7fg3ardt/StudentChain?type=design&node-id=1516-486&mode=design 
 
-Deployed Contract Address on Lisk Sepolia Testnet : 
-https://gist.github.com/nafkem/b62345d21e858574f0dad4517e79b812
+Deployed Contract Address on Open Campus Codex - EduChain : 
+https://gist.github.com/okste1234/e1c19050204c27aeb636f3b39bc6ba82
