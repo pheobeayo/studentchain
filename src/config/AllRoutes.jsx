@@ -29,7 +29,6 @@ const AllRoutes = () => {
   import("../components/proposal/Proposal")
 );
 const CreateCommunity = lazy(()=> import("../pages/create-community/CreateCommunity"));
-
 const CommunityLayout = lazy(()=> import("../layout/CommunityLayout"));
 const Dashboard = lazy(()=> import("../pages/dashboard/Dashboard"));
 

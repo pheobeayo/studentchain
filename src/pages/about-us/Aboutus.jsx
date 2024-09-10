@@ -3,7 +3,7 @@ import About from "../../components/about/About";
 
 const Aboutus = () => {
   return (
-    <main className="w-[100vw] h-[120vh]">
+    <main className="w-[100vw] h-[140vh]">
       <section className="w-screen h-full mt-20">
         <About/>
       </section>
